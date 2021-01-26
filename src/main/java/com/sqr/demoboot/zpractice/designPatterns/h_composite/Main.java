@@ -65,7 +65,7 @@ public class Main {
         node.print();
         if (node instanceof BranchNode){
             for (int i=0 ; i<((BranchNode) node).nodes.size() ; i++){
-                treeShape(((BranchNode) node).nodes.get(i),depth++);
+                treeShape(((BranchNode) node).nodes.get(i),depth+1);
             }
         }
     }
