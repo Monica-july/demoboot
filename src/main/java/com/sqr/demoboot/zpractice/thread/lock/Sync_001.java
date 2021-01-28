@@ -1,7 +1,7 @@
 package com.sqr.demoboot.zpractice.thread.lock;
 
 public class Sync_001 implements Runnable{
-    private /*volatile*/ int count=10;
+    private /*a_001_volatile*/ int count=10;
     public /*synchronized*/ void sub(){
         count--;
         System.out.println(Thread.currentThread().getName() + " count = " + count);
