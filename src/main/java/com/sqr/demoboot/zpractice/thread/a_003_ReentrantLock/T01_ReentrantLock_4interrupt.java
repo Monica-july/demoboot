@@ -7,11 +7,11 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * ReentrantLock 方法
  * lock 使用完成后必须要释放锁
- * tryLock 尝试获取锁
+ * tryLock 尝试获取锁  不管获没获取到锁方法都会继续执行
  * new ReentrantLock(true) 公平锁，默认为非公平锁
- *
+ * lockInterruptibly 对线程打断做出响应
  */
-public class T01_ReentrantLock_3method {
+public class T01_ReentrantLock_4interrupt {
     Lock lock = new ReentrantLock();
     public void method1() {
         try {
@@ -21,30 +21,28 @@ public class T01_ReentrantLock_3method {
                 Thread.sleep(1000);
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println(Thread.currentThread().getName()+" Interrupt!!!");
         }finally {
             lock.unlock();/*aaa 释放锁*/
         }
     }
     public void method2() {
-        boolean locked=false;
         try {
-            locked = lock.tryLock(3, TimeUnit.SECONDS);
-            System.out.println("method2 获取锁："+locked);
+            lock.lockInterruptibly();
             System.out.println("exec m2...........");
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println(Thread.currentThread().getName()+" Interrupt!!!");
         } finally {
-            if (locked){
-                lock.unlock();
-            }
+            lock.unlock();
         }
     }
 
     public static void main(String[] args) throws InterruptedException {
-        T01_ReentrantLock_3method t01_reentrantLock = new T01_ReentrantLock_3method();
-        new Thread(t01_reentrantLock::method1).start();
+        T01_ReentrantLock_4interrupt t01_reentrantLock = new T01_ReentrantLock_4interrupt();
+        Thread thread1 = new Thread(t01_reentrantLock::method1);
+        thread1.start();
         Thread.sleep(1000);
         new Thread(t01_reentrantLock::method2).start();
+        thread1.interrupt();
     }
 }
