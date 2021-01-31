@@ -1,6 +1,5 @@
-package com.sqr.demoboot.zpractice.thread.a_003_ReentrantLock;
+package com.sqr.demoboot.zpractice.thread.a_003_ReentrantLockAndOthers;
 
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 

@@ -1,4 +1,4 @@
-package com.sqr.demoboot.zpractice.thread.a_003_ReentrantLock;
+package com.sqr.demoboot.zpractice.thread.a_003_ReentrantLockAndOthers;
 
 /**
  * 锁的可重入性
