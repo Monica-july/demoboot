@@ -1,0 +1,28 @@
+package com.sqr.demoboot.zpractice.thread.a_003_ReentrantLockAndOthers;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.LockSupport;
+
+/**
+ *
+ */
+public class T08_LockSupport {
+    public static void main(String[] args) {
+        Thread t = new Thread(()->{
+            for (int i = 0; i < 6 ; i++) {
+                System.out.println(i);
+                if (i==2){
+                    LockSupport.park();
+                }
+            }
+        });
+        t.start();
+        try {
+            TimeUnit.SECONDS.sleep(8);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("after 8 senconds!");
+        LockSupport.unpark(t);
+    }
+}
