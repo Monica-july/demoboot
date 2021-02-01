@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 生产者消费者问题
@@ -11,6 +12,7 @@ import java.util.concurrent.locks.Lock;
  * 生产者 2
  * 消费者 6
  * 经典写法 使用synchronized实现
+ *
  */
 public class Code02_Condition<T> {
     private List<T> list = new ArrayList<>();/*容器*/
@@ -64,9 +66,9 @@ public class Code02_Condition<T> {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Code01_SyncList<String> list = new Code01_SyncList<>();
+        Code02_Condition<String> list = new Code02_Condition<>(new ReentrantLock());
         List<Thread> products = new ArrayList<>(2);
-        List<Thread> customers = new ArrayList<>(2);
+        List<Thread> customers = new ArrayList<>(5);
         for (int i = 0; i < 2 ; i++) {
             int finalI = i;
             products.add(new Thread(()->{
