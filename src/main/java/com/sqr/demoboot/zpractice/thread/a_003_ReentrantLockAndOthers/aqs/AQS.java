@@ -1,4 +1,4 @@
-package com.sqr.demoboot.zpractice.thread.a_003_ReentrantLockAndOthers;
+package com.sqr.demoboot.zpractice.thread.a_003_ReentrantLockAndOthers.aqs;
 
 import java.util.concurrent.locks.ReentrantLock;
 
