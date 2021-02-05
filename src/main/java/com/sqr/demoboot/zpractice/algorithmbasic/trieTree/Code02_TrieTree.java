@@ -17,19 +17,17 @@ public class Code02_TrieTree {
         str = str.toLowerCase();
         char[] chars = str.toCharArray();
         Node2 node = root;
+        node.pass++;
         for (int i = 0; i < chars.length ; i++) {
-            node.pass++;
             Node2 node1;
             if (node.nexts.get(chars[i])==null){
-                node1 = new Node2();
-                node.nexts.put(chars[i],node1);
+                node.nexts.put(chars[i],new Node2());
             }
-            node1 = node.nexts.get(chars[i]);
+            node = node.nexts.get(chars[i]);
+            node.pass++;
             if (i==chars.length-1){
-                node1.pass++;
-                node1.end++;
+                node.end++;
             }
-            node = node1;
         }
     }
     /*
@@ -66,8 +64,7 @@ public class Code02_TrieTree {
                     node.nexts=null;
                     return true;
                 }
-                Node2 tempNode = node.nexts.get(chars[i]);
-                node = tempNode;
+                node = node.nexts.get(chars[i]);
             }
             node.end--;
             return true;
