@@ -1,4 +1,4 @@
-package com.sqr.demoboot.zpractice.thread.b_002_queue;
+package com.sqr.demoboot.zpractice.thread.b_003_queue;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -8,7 +8,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * put() take() 阻塞的
  * 实现类  LinkedBlockingQueue  maxSize = Integer.MAX_VALUE
  */
-public class T04_BlockingQueue {
+public class T04_LinkedBlockingQueue {
     static BlockingQueue<String> queue = new LinkedBlockingQueue<>(50);
     public static void main(String[] args) {
         //生产者线程

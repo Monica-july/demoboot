@@ -1,9 +1,7 @@
-package com.sqr.demoboot.zpractice.thread.b_002_queue;
+package com.sqr.demoboot.zpractice.thread.b_003_queue;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-import java.util.Vector;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 
