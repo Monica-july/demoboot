@@ -1,4 +1,4 @@
-package com.sqr.demoboot.zpractice.thread.b_002_queue;
+package com.sqr.demoboot.zpractice.thread.b_003_queue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
  * peek
  * poll
  */
-public class T03_ConcurrentQueue {
+public class T03_ConcurrentLinkedQueue {
     public static void main(String[] args) throws InterruptedException {
         Queue<String> list1 = new ConcurrentLinkedQueue<>();
         Queue<String> list2 = new ConcurrentLinkedQueue<>();

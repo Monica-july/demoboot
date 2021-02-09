@@ -1,4 +1,4 @@
-package com.sqr.demoboot.zpractice.thread.b_002_queue;
+package com.sqr.demoboot.zpractice.thread.b_003_queue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * 超过长度再向里面存数据会阻塞
  * offer 尝试存放 try
  */
-public class T05_BlockingQueue {
+public class T05_ArrayBlockingQueue {
     public static void main(String[] args) throws InterruptedException {
         BlockingQueue<String> queue = new ArrayBlockingQueue<>(10);
         for (int i = 0; i < 10 ; i++) {

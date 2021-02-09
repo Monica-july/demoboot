@@ -1,4 +1,4 @@
-package com.sqr.demoboot.zpractice.thread.b_002_queue;
+package com.sqr.demoboot.zpractice.thread.b_003_queue;
 
 import java.util.ArrayList;
 import java.util.List;
